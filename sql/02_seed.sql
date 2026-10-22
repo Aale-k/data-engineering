@@ -1,11 +1,12 @@
 -- Add five customers
-INSERT INTO customers (customer_id, name, country)
+INSERT INTO customers (customer_id, name, country, email)
 VALUES
-    (1, 'Aino Virtanen', 'Finland'),
-    (2, 'Erik Andersson', 'Sweden'),
-    (3, 'Mikko Korhonen', 'Finland'),
-    (4, 'Sophie Müller', 'Germany'),
-    (5, 'Elin Karlsson', 'Sweden');
+     (1, 'Aino Virtanen', 'Finland', 'aino@example.com'),
+    (2, 'Erik Andersson', 'Sweden', NULL),
+    (3, 'Mikko Korhonen', 'Finland', NULL),
+    (4, 'Sophie Müller', 'Germany', NULL),
+    (5, 'Elin Karlsson', 'Sweden', NULL)
+ON CONFLICT (customer_id) DO NOTHING;
 
 -- Add four products
 INSERT INTO products (product_id, product_name, price)
